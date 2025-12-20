@@ -12,6 +12,11 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 
 from pathlib import Path
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://image-moderation-frontend.onrender.com"
+]
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -25,7 +30,12 @@ SECRET_KEY = "django-insecure-cz1o$w92=hace31@pq1&l#&j(z)ctpo)uzne-3hjqyb3m&5kpk
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = [
+    "image-moderation-frontend.onrender.com",
+    "localhost",
+    "127.0.0.1",
+]
+
 
 
 # Application definition
