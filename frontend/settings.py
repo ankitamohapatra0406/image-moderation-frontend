@@ -17,6 +17,9 @@ CSRF_TRUSTED_ORIGINS = [
 ]
 
 
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -31,6 +34,8 @@ SECRET_KEY = "django-insecure-cz1o$w92=hace31@pq1&l#&j(z)ctpo)uzne-3hjqyb3m&5kpk
 DEBUG = False
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SAMESITE = "Lax"
+
 
 ALLOWED_HOSTS = [
     "image-moderation-frontend.onrender.com",
