@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Moderation</title>
+</head>
+<body>
+    <h1>Image Moderation Frontend</h1>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="image" />
+        <button type="submit">Upload</button>
+    </form>
+
+    {% if result %}
+        <h3>Result</h3>
+        <pre>{{ result }}</pre>
+    {% endif %}
+</body>
+</html>
