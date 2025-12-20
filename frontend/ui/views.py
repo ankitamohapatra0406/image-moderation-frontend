@@ -5,6 +5,7 @@ import requests
 
 def index(request):
     result = None
+    image_url=None
 
     if request.method == "POST" and request.FILES.get("image"):
         image = request.FILES["image"]
@@ -17,7 +18,11 @@ def index(request):
 
         if response.status_code == 200:
             result = response.json()
+            image_url = result.get("output_image_path")
         else:
             result = {"error": "ML API failed"}
 
-    return render(request, "ui/index.html", {"result": result})
+    return render(request, "ui/index.html", {
+        "result": result,
+        "image_url": image_url
+    })

@@ -1,20 +1,85 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Image Moderation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f7f7f7;
+            padding: 40px;
+        }
+
+        .container {
+            background: #ffffff;
+            padding: 25px;
+            max-width: 500px;
+            margin: auto;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        input[type="file"] {
+            margin-top: 10px;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 8px 15px;
+            background: #2c7be5;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1a5fd0;
+        }
+
+        .result {
+            margin-top: 20px;
+            background: #f1f1f1;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .note {
+            margin-top: 15px;
+            font-size: 12px;
+            color: #666;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <h1>Image Moderation Frontend</h1>
+
+<div class="container">
+    <h1>Image Moderation</h1>
 
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        <input type="file" name="image" />
-        <button type="submit">Upload</button>
+        <input type="file" name="image" required />
+        <br>
+        <button type="submit">Upload & Moderate</button>
     </form>
 
     {% if result %}
-        <h3>Result</h3>
-        <pre>{{ result }}</pre>
+        <div class="result">
+            <strong>Moderation Result:</strong>
+            <pre>{{ result }}</pre>
+        </div>
     {% endif %}
+
+    <div class="note">
+        Powered by ML Image Moderation API
+    </div>
+</div>
+
 </body>
 </html>
