@@ -1,4 +1,4 @@
-# Image Moderation Frontend
+# Image Moderation Frontend 
 
 A minimal Django-based frontend that allows users to upload images and sends them to a FastAPI-based ML image moderation backend.
 
