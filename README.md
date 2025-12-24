@@ -9,7 +9,7 @@ A minimal Django-based frontend that allows users to upload images and sends the
 - Clean and minimal design
 
 ## Tech Stack
-- Django
+- Django 
 - HTML/CSS
 - Python Requests
 - FastAPI (backend)
